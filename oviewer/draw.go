@@ -347,6 +347,7 @@ func (root *Root) drawLineNumber(lN int, y int, valid bool) {
 	}
 	if !valid {
 		root.blankLineNumber(y)
+		return
 	}
 	// Line numbers start at 1 except for skip and header lines.
 	numC := StrToContents(fmt.Sprintf("%*d", root.scr.startX-1, lN-m.firstLine()+1), m.TabWidth)
